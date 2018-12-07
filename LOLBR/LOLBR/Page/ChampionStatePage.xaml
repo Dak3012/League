@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LOLBR.Page.ChampionStatePage"
+             BackgroundColor="Black"
+             xmlns:local="clr-namespace:LOLBR.controls">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <StackLayout Padding="4"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                <ScrollView>
+                    <StackLayout>
+                        <StackLayout.Resources>
+                            <ResourceDictionary>
+                                <Style TargetType="Frame">
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="BackgroundColor" Value="Transparent"/>
+                                </Style>
+                            </ResourceDictionary>
+                        </StackLayout.Resources>
+                        <Grid>
+                            <Frame Style="{StaticResource Frame_fundoOpacoPage}"/>
+                            <Frame>
+                                <StackLayout>
+                                    <Label x:Name="Label_Name"/>
+                                    <Label x:Name="Label_Partype"/>
+                                    <Label x:Name="Label_Title"/>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                        <local:Grid_Collapse Text="Status" ItemCollapsed="False">
+                            <Grid>
+                                <Frame Style="{StaticResource Frame_fundoOpacoPage}"/>
+                                <Frame>
+                                    <StackLayout>
+                                        <Label x:Name="Label_hp"/>
+                                        <Label x:Name="Label_hpregen"/>
+                                        <Label x:Name="Label_attackDamage"/>
+                                        <Label x:Name="Label_attackSpeed"/>
+                                        <Label x:Name="Label_crit" IsVisible="False" IsEnabled="False"/>
+                                        <Label x:Name="Label_armor"/>
+                                        <Label x:Name="Label_moveSpeed"/>
+                                        <Label x:Name="Label_mp"/>
+                                        <Label x:Name="Label_mpregen"/>
+                                        <Label x:Name="Label_mpResist"/>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </local:Grid_Collapse>
+                        <local:Grid_Collapse Text="História">
+                            <Grid>
+                                <Frame Style="{StaticResource Frame_fundoOpacoPage}"/>
+                                <Frame  Padding="5">
+                                    <Label x:Name="Label_lore"/>
+                                </Frame>
+                            </Grid>
+                        </local:Grid_Collapse>
+                        <local:Grid_Collapse Text="Habilidades">
+                            <Grid>
+                                <StackLayout x:Name="Habiliti_Layoult">
+                                    <!--outros objetos do stack layout foram adicionados via código-->
+                                    <Grid>
+                                        <Frame  Style="{StaticResource Frame_fundoOpacoPage}"/>
+                                        <Frame>
+                                            <Grid Padding="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width ="{StaticResource Tamanho}"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Image x:Name="Image_passive" Grid.Column="0" Grid.Row="0" HeightRequest="{DynamicResource Tamanho}" MinimumHeightRequest="{DynamicResource Tamanho}"/>
+                                                <Label x:Name="description_passive" Grid.Column="1" Grid.Row="0" VerticalTextAlignment="Center"/>
+                                            </Grid>
+                                        </Frame>
+                                    </Grid>
+                                </StackLayout>
+                            </Grid>
+                        </local:Grid_Collapse>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
