@@ -1,8 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:LOLBR.controls"             
              x:Class="LOLBR.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="Black"/>
+            </Style>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="Black"/>
+            </Style>
+            <x:Int16 x:Key="Tamanho">
+                70
+            </x:Int16>
+            <local:arraytostring x:Key="arraytostring"/>
+            <Style TargetType="SearchBar">
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Style TargetType="Frame">
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+            <Style TargetType="Frame" x:Key="Frame_fundoOpaco">
+                <Setter Property="BackgroundColor" Value="#505050"/>
+                <Setter Property="Opacity" Value="0.3"/>
+                <Setter Property="BorderColor" Value="LightBlue"/>
+            </Style>
+            <Style TargetType="Frame" x:Key="BlackFrame">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="PlaceholderColor" Value="Gray"/>
+                <Setter Property="ReturnType" Value="Search"/>
+            </Style>
+            <Style TargetType="Frame" x:Key="Frame_fundoOpacoPage">
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="Opacity" Value="0.3"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

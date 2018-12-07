@@ -7,7 +7,7 @@
         <StackLayout
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
-            <SearchBar x:Name="Busca"/>
+            <SearchBar x:Name="Busca" TextChanged="Busca_TextChanged"/>
             <ListView x:Name="Champions_List" 
                           ItemsSource="{Binding Champions}" 
                           ItemSelected="Champions_List_ItemSelected" 

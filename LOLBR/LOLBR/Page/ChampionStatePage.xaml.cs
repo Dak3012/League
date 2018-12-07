@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using LOLBR.classes;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -57,7 +54,7 @@ namespace LOLBR.Page
         {
             Label_attackDamage.Text = "Dano de Ataque = " + FormatString(Math.Round(champ.stats.attackdamage, 2), Math.Round(champ.stats.attackdamageperlevel, 2), null);
             Label_moveSpeed.Text = "Velocidade de movimento = " + champ.stats.movespeed.ToString();
-            Label_attackSpeed.Text = "Velocidade de ataque = " + (Math.Round(0.625 / (1 + champ.stats.attackspeedoffset), 3)).ToString() + " por segundo\n" + champ.stats.attackspeedperlevel + "% por level";
+            Label_attackSpeed.Text = "Velocidade de ataque = " + Math.Round(0.625 / (1 + champ.stats.attackspeedoffset), 3).ToString() + " por segundo\n" + champ.stats.attackspeedperlevel + "% por level";
             Label_armor.Text = "Armadura = " + FormatString(Math.Round(champ.stats.armor, 2), Math.Round(champ.stats.armorperlevel, 2), null);
             Label_hp.Text = "HP = " + FormatString(champ.stats.hp, champ.stats.hpperlevel, null);
             if (champ.partype == "Mana")
@@ -90,7 +87,7 @@ namespace LOLBR.Page
         {
             public GridSpells(Champion.Spells Spells)
             {
-                this.Margin = new Thickness(10);
+                Margin = new Thickness(10);
                 var Str = Application.Current.Resources["Tamanho"];
                 var resource = Convert.ToInt16(Str);
                 ColumnDefinitions = new ColumnDefinitionCollection
@@ -127,7 +124,7 @@ namespace LOLBR.Page
                     if (Regex.Match(match.Value, "e" + @"\d").Success)
                     {
                         var valueMatch = Regex.Match(match.Value, @"\d+").Value;
-                        var number = Int32.Parse(valueMatch);
+                        var number = int.Parse(valueMatch);
                         if (Regex.Match(strinRetorno, match.Value).Success)
                         {
                             if (spells.effectBurn[number] != null)
